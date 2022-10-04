@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 function showProject(){
+    // const shoot = () => {
+    //     alert("Great Shot!");
+    //   }
+    
     return (
         <React.Fragment>
         <br />
@@ -14,7 +19,9 @@ function showProject(){
     </ul>
 </div>
 <br />
-<button className="btn btn-secondary m-2">View all bugs</button>
+<Link to="/BugList" className="btn btn-secondary m-2">Show Bugs List</Link>
+{/* <button onClick={shoot}>Take the shot!</button> */}
+{/* <button className="btn btn-secondary m-2" >View all bugs</button> */}
 </React.Fragment>   
     );
 
