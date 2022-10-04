@@ -1,9 +1,7 @@
-// import React from 'react';
 import './App.css';
-// import { Route, Routes } from 'react-router-dom';
 import ProjectList from './components/ProjectList';
 import ProjectShow from './components/ProjectShow';
-import Bugshow from './components/Bugshow';
+import BugList from './components/BugList';
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -20,16 +18,12 @@ function App() {
       <Routes>
         <Route path='/' element={<ProjectList />}></Route>
         <Route path='/ProjectShow' element={<ProjectShow />}></Route>
-
-        
+        <Route path='' element={<BugList />}></Route>      
       </Routes>
-      {/* <Routes>
-        <Route path='/' component={ProjectList}></Route>
-      </Routes> */}
-     {/* <ProjectShow /> */}
      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+

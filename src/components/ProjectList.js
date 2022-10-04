@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-// import { Link } from '@react-navigation/native';
 
 function showProjectList(){
-    // const navigate = UseNavigate();
     return (
         <React.Fragment>
             <br />
@@ -21,14 +17,9 @@ function showProjectList(){
 					<tbody>
 						<tr>
 							<td>Bugzilla React</td>
-						
 							<td>2019-09-01</td>
-
 							<td>Manager 01</td>
 							<td>
-							{/* <Link > */}
-      {/* Go to Jane's profile
-    </Link> */}
 								<a href="/ProjectShow" className="table-link">
 									<span className="fa-stack">
 										<i className="fa fa-square fa-stack-2x"></i>
@@ -46,18 +37,15 @@ function showProjectList(){
 								<span className="fa-stack">
                   <i className="fa fa-square fa-stack-2x"></i>
 				  <i className="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-               
                 </span>
 								</a>
 							</td>
-
 						</tr>
 					</tbody>
 				</table>
 			</div>
         </React.Fragment>
-    )
-
+    );
 }
-
 export default showProjectList;
+

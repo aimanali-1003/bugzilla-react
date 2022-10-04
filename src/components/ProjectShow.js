@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { useNavigate } from "react-router-dom";
 
 function showProject(){
-    // const navigate = useNavigate();
     return (
         <React.Fragment>
         <br />
@@ -16,17 +14,11 @@ function showProject(){
     </ul>
 </div>
 <br />
-{/* <div className="container-fluid">
- <% if (current_user.QA?) %>
-  <%= link_to "Add bug", new_project_bug_path(@project), class:"btn btn-secondary" %>
- <% end %>
-  <%= link_to "View all Bugs", project_bugs_path(@project), class:"btn btn-secondary" %>
-</div> */}
-</React.Fragment>
-       
-      
+<button className="btn btn-secondary m-2">View all bugs</button>
+</React.Fragment>   
     );
 
 }
 
 export default showProject;
+
