@@ -7,7 +7,6 @@ export default function ShowProject(id){
   const[projects, setProject] = useState([])
   const[users, setUser] = useState([])
 
-
   useEffect(() => {
     axios.get(`http://localhost:3000/api/v1/projects/${params.id}`)
     .then(res => {
