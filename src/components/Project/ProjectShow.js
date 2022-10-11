@@ -2,19 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ProjectShow } from "../../api/projectAPI";
 
-
 export default function ShowProject(id) {
   const params = useParams();
   const [projects, setProject] = useState([]);
   const [users, setUser] = useState([]);
 
   useEffect(() => {
-    ProjectShow(params.id).then( response =>{
-      setProject(response)
-      setUser(response.enrolled_users)
-    }).catch((Error) => {
-      
-    })}, [params.id] )
+    ProjectShow(params.id)
+      .then((response) => {
+        setProject(response);
+        setUser(response.enrolled_users);
+      })
+      .catch((Error) => {});
+  }, [params.id]);
 
   return (
     <>
@@ -39,8 +39,8 @@ export default function ShowProject(id) {
           </li>
           <li className="list-group-item">
             <strong>Project users:</strong>
-            {users.map((user) => (
-              <p>{user.name}</p>
+            {users.map((user, index) => (
+              <p key={index}>{user.name}</p>
             ))}
           </li>
         </ul>
