@@ -24,7 +24,7 @@ export default function ShowBugListing() {
           <h4>Project Name: {bugs[0] && bugs[0].project_name}</h4>
         )}
         <li className="list-group-item">
-          <i className="fa fa-bug fa-2x"></i>Bug Count:{" "}
+          <i className="fa fa-bug fa-2x"></i>Bugs
         </li>
       </div>
       <table className="table">
