@@ -17,16 +17,17 @@ export default function ShowProjectList() {
   return (
     <>
       {projects.map((project) => (
-        <div className="container" key={project.id}>
-          <p>{project.name}</p>
-          <p>{project.created_at}</p>
-          <p>{project.creator_id}</p>
-          <a href={`/ProjectShow/${project.id}`} className="table-link">
-            <span className="fa-stack">
-              <i className="fa fa-square fa-stack-2x"></i>
-              <i className="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-            </span>
-          </a>
+        <div className="card" key={project.id}>
+          <div className="card-body">
+            <h5 className="card-title">{project.name}</h5>
+            <h6 className="card-subtitle mb-2 text-muted">
+              {project.created_at}
+            </h6>
+            <p className="card-text">{project.description}</p>
+            <a href={`/ProjectShow/${project.id}`} className="card-link">
+              Show Project
+            </a>
+          </div>
         </div>
       ))}
     </>

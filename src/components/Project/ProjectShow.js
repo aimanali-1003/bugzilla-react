@@ -40,7 +40,7 @@ export default function ShowProject(id) {
           <li className="list-group-item">
             <strong>Project users:</strong>
             {users.map((user) => (
-              <li>{user.name}</li>
+              <p>{user.name}</p>
             ))}
           </li>
         </ul>

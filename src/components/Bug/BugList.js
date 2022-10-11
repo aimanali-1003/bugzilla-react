@@ -5,13 +5,14 @@ import { BugList } from "../../api/bugAPI";
 export default function ShowBugListing() {
   const params = useParams();
   const [bugs, setBug] = useState([]);
-  
+
   useEffect(() => {
-    BugList(params.id).then( response =>{
-      setBug(response)
-    }).catch((Error) => {
-      
-    })}, [params.id] )
+    BugList(params.id)
+      .then((response) => {
+        setBug(response);
+      })
+      .catch((Error) => {});
+  }, [params.id]);
 
   return (
     <>
@@ -38,16 +39,18 @@ export default function ShowBugListing() {
         </thead>
         {bugs.map((bug) => (
           <tbody key={bug.id}>
-            <td>{bug.id}</td>
-            <td>{bug.title}</td>
-            <td>{bug.status}</td>
-            <td>
-              {bug.assigned_to_id ? (
-                <i className="badge rounded-pill badge-success">Picked</i>
-              ) : (
-                <i className="badge rounded-pill badge-warning">Not Picked</i>
-              )}
-            </td>
+            <tr>
+              <td>{bug.id}</td>
+              <td>{bug.title}</td>
+              <td>{bug.status}</td>
+              <td>
+                {bug.assigned_to_id ? (
+                  <i className="badge rounded-pill badge-success">Picked</i>
+                ) : (
+                  <i className="badge rounded-pill badge-warning">Not Picked</i>
+                )}
+              </td>
+            </tr>
           </tbody>
         ))}
       </table>
