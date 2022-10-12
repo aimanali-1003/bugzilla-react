@@ -12,7 +12,7 @@ const ShowBugListing = () => {
         setBug(response);
       })
       .catch(() => {});
-
+      
   }, [id]);
 
   return (
