@@ -2,19 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ProjectShow } from "../../api/projectAPI";
 
-export default function ShowProject(id) {
-  const params = useParams();
+const ShowProject = () => {
+  const { id } = useParams();
   const [projects, setProject] = useState([]);
   const [users, setUser] = useState([]);
 
   useEffect(() => {
-    ProjectShow(params.id)
+    ProjectShow(id)
       .then((response) => {
         setProject(response);
         setUser(response.enrolled_users);
       })
-      .catch((Error) => {});
-  }, [params.id]);
+      .catch(() => {});
+  }, [id]);
 
   return (
     <>
@@ -47,7 +47,7 @@ export default function ShowProject(id) {
       </div>
       <br />
       <a
-        href={`/ProjectShow/${params.id}/BugList`}
+        href={`/ProjectShow/${id}/BugList`}
         className="btn btn-secondary m-2"
       >
         Show Bugs List
@@ -55,3 +55,4 @@ export default function ShowProject(id) {
     </>
   );
 }
+export default ShowProject;

@@ -2,17 +2,18 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { BugList } from "../../api/bugAPI";
 
-export default function ShowBugListing() {
-  const params = useParams();
+const ShowBugListing = () => {
+  const { id } = useParams();
   const [bugs, setBug] = useState([]);
 
   useEffect(() => {
-    BugList(params.id)
+    BugList(id)
       .then((response) => {
         setBug(response);
       })
-      .catch((Error) => {});
-  }, [params.id]);
+      .catch(() => {});
+
+  }, [id]);
 
   return (
     <>
@@ -57,3 +58,4 @@ export default function ShowBugListing() {
     </>
   );
 }
+export default ShowBugListing;
